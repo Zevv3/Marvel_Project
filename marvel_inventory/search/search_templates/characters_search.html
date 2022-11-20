@@ -1,0 +1,20 @@
+{% extends "nav.html" %}
+
+{% block content %}
+
+
+<h1>Search All Marvel Characters!</h1>
+<main class="container">
+    <div class="row">
+        <aside class="col-12 col-md-6">
+            <h3>Enter a character name to view information on the character. You can then add the character to your favorites via Insomnia or other api management apps if you would like. Simply copy and paste the search results.</h3>
+            {% include 'searchcharactersform.html' %}
+            <br>
+            <h5>Results:<br><br>
+                {{ char_searched }}
+            </h5>
+        </aside>
+    </col-md-6>
+    </div>
+</main>
+{% endblock content %}
