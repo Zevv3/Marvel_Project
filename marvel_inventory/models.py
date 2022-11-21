@@ -68,6 +68,7 @@ class Character(db.Model):
     num_stories = db.Column(db.Integer) 
     # test.characters.all()['data']['results'][0]['series']['available']
     num_series = db.Column(db.Integer)
+    date_created = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
     def __init__(self, id, name, desc, num_comics, num_stories, num_series, user_token):
