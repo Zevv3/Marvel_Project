@@ -2,14 +2,24 @@ from hashlib import md5
 from datetime import datetime
 from marvel import Marvel
 import requests
+from dotenv import load_dotenv
+import os
+import json
+
+def configure():
+    load_dotenv()
+
+PUBLIC_KEY = os.getenv('PUBLIC_KEY')
+PRIVATE_KEY = os.getenv('PRIVATE_KEY')
+
 # I deleted the keys file to hide my keys but I figured I'd keep this file to show my process of figuring this out
-from keys import PUBLIC_KEY, PRIVATE_KEY
-from flask import jsonify
+# from keys import PUBLIC_KEY, PRIVATE_KEY
+# from flask import jsonify
 # https://developer.marvel.com/docs#!/public/getCreatorCollection_get_0
 
 # There is a way of storing the keys more safely using environment variables or something. I want to look into that
-m = Marvel(PUBLIC_KEY=PUBLIC_KEY, PRIVATE_KEY=PRIVATE_KEY)
-characters = m.characters
+# m = Marvel(PUBLIC_KEY=PUBLIC_KEY, PRIVATE_KEY=PRIVATE_KEY)
+# characters = m.characters
 # commenting all of this out so I don't accidentally call the api a bunch 
 # character_name = characters.all()['data']['results'][0]['name']
 # comics = m.comics.all()['data']['results']
@@ -47,3 +57,11 @@ characters = m.characters
         
 
 # print(marvel_api_call())
+
+# m = Marvel(PUBLIC_KEY='cea3baa3c532ae46cb61b950e8d7733d', PRIVATE_KEY='dfca4ba7ee9d2abcd10018e2c91c9c11f82d4194')
+
+# comicid = m.comics.all(titleStartsWith='Avengers')['data']['results'][0]['id']
+# characters = m.characters
+
+# data = characters.all(comics=comicid)
+# print(data)

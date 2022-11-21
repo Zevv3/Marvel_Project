@@ -17,5 +17,8 @@ class UserSigninForm(FlaskForm):
 
 # We will also want a class for the api requests so the user can search for a character or comic
 class SearchCharactersForm(FlaskForm):
-    charname = StringField('charname', validators=[DataRequired()])
+    # Search by name
+    charName = StringField('Character Name')
+    comicTitle = StringField('Comic Title')
+    
     submit_button = SubmitField()
