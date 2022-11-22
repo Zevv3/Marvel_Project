@@ -58,7 +58,7 @@ PRIVATE_KEY = os.getenv('PRIVATE_KEY')
 
 # print(marvel_api_call())
 
-# m = Marvel(PUBLIC_KEY='cea3baa3c532ae46cb61b950e8d7733d', PRIVATE_KEY='dfca4ba7ee9d2abcd10018e2c91c9c11f82d4194')
+
 
 # comicid = m.comics.all(titleStartsWith='Avengers')['data']['results'][0]['id']
 # characters = m.characters
